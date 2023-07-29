@@ -1,0 +1,56 @@
+from numpy.core.fromnumeric import shape
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+
+from sklearn.datasets import load digits
+
+df load_digits()
+
+_,axes plt.subplots(nrows-1, ncols-4, figsize-(1, 3))
+
+for ax, image, label in zip(axes, df.images, df.target):
+
+ ax.set_axis_off() 
+ ax.imshow(image, cmap-plt.cm.gray_r, interpolation nearest")
+ ax.set_title("Training: 1 x label)
+
+ df.images.shape
+ df.image[0]
+ df.image[0].shape
+ len(df.images)
+ n_sample=len(df.images)
+ data[0]
+ data[0].shape  
+ data.shape
+              
+ data.min()
+ data.max()
+ data=data/16
+ data.min()
+ data.max()
+ data[0]
+              
+
+ from sklearn. model selection import train_test_split
+
+ Xtrain, X test, y train, y test train_test_split(data, df.target, test size-))
+
+ X_train shape, X test shape, y train, shape, y test shape
+
+
+ from sklearn.ensemble import Randonforest Classifier()
+ rf=RandomForestClassifer()
+   fit(x_train, y_train)
+
+      RandonForestClassifier()
+
+           
+  y_pred=rf.predict(X_test)
+  y_pred
+           
+  From sklearn.metrics import confudsion_matrix, classification_report
+   
+  confusion_matrix(y_test,Y_pred)
+
+  print(classification_report(y_test,y_pred))
