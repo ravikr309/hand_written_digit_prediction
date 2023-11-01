@@ -1,0 +1,30 @@
+import pandas as pd
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LinearRegression
+
+# Load the dataset (replace 'auto-mpg.csv' with your dataset)
+data = pd.read_csv('auto-mpg.csv')
+
+# Select features and target
+X = data[['cylinders', 'horsepower', 'weight']]
+y = data['mpg']
+
+# Split the data into training and testing sets
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+# Create and train a linear regression model
+model = LinearRegression()
+model.fit(X_train, y_train)
+
+# Make predictions on the test data
+y_pred = model.predict(X_test)
+
+# Evaluate the model by calculating the Mean Squared Error
+mse = ((y_test - y_pred) ** 2).mean()
+
+print(f"Mean Squared Error: {mse:.2f}")
+
+# Predict the mileage for a new car
+new_car = pd.DataFrame({'cylinders': [4], 'horsepower': [100], 'weight': [2000]})
+predicted_mpg = model.predict(new_car)
+print(f"Predicted Mileage for the New Car: {predicted_mpg[0]:.2f} mpg")
